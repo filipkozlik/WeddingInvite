@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/WeddingInvite/static/css/main.1fa21162.chunk.css",
-    "main.js": "/WeddingInvite/static/js/main.1afc96b8.chunk.js",
-    "main.js.map": "/WeddingInvite/static/js/main.1afc96b8.chunk.js.map",
+    "main.js": "/WeddingInvite/static/js/main.16d88bd1.chunk.js",
+    "main.js.map": "/WeddingInvite/static/js/main.16d88bd1.chunk.js.map",
     "runtime-main.js": "/WeddingInvite/static/js/runtime-main.94cab858.js",
     "runtime-main.js.map": "/WeddingInvite/static/js/runtime-main.94cab858.js.map",
     "static/css/2.67123b20.chunk.css": "/WeddingInvite/static/css/2.67123b20.chunk.css",
     "static/js/2.9adcdb08.chunk.js": "/WeddingInvite/static/js/2.9adcdb08.chunk.js",
     "static/js/2.9adcdb08.chunk.js.map": "/WeddingInvite/static/js/2.9adcdb08.chunk.js.map",
     "index.html": "/WeddingInvite/index.html",
-    "precache-manifest.5c55b71ca0c273c21d012cb921e69680.js": "/WeddingInvite/precache-manifest.5c55b71ca0c273c21d012cb921e69680.js",
+    "precache-manifest.0b2c3c8bf0bbd5355b77f41a1d98905f.js": "/WeddingInvite/precache-manifest.0b2c3c8bf0bbd5355b77f41a1d98905f.js",
     "service-worker.js": "/WeddingInvite/service-worker.js",
     "static/css/2.67123b20.chunk.css.map": "/WeddingInvite/static/css/2.67123b20.chunk.css.map",
     "static/css/main.1fa21162.chunk.css.map": "/WeddingInvite/static/css/main.1fa21162.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.67123b20.chunk.css",
     "static/js/2.9adcdb08.chunk.js",
     "static/css/main.1fa21162.chunk.css",
-    "static/js/main.1afc96b8.chunk.js"
+    "static/js/main.16d88bd1.chunk.js"
   ]
 }
