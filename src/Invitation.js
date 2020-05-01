@@ -1,5 +1,12 @@
 import React, { Component } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  useParams,
+} from "react-router-dom";
 import "./Invitation.css";
+import guests from "./resources/json/guests.json";
 
 class App extends Component {
   state = {
@@ -12,6 +19,11 @@ class App extends Component {
     is_over_2000: false,
     refreshed: true,
   };
+
+  componentDidMount() {
+    // const { handle } = this.props.match.params;
+    // alert(handle);
+  }
 
   // Setting listener when component will mount
   componentWillMount() {
@@ -75,70 +87,70 @@ class App extends Component {
       }
     }
     return (
-      <div class="wrapper">
-        <div class="box text header">
-          <h1>Dragi Mani i Janja,</h1>
-          <h1>ovim putem vas pozivamo na naše vjenčanje.</h1>
-          <h1>
-            Sve informacije o nama i našem vječanju možete pronaći u retcima
-            ispod.
-          </h1>
-          <h1>Veselimo se vašem dolasku,</h1>
-          <h1>Vaši Dolores i Filip</h1>
-        </div>
-        <div class="biography">
-          <div class="box about_doli_container doli_about_photo">
-            <div class="box center text name">Dolores</div>
-            <div class="center text about ">O Dolores</div>
+      <Router>
+        <div class="wrapper">
+          <div class="box text header">
+            <Switch>
+              <Route path="/:hash" children={<Title />} />
+            </Switch>
           </div>
-          <div class="box about_filip_container filip_about_photo">
-            <div class="box center text name">Filip</div>
-            <div class="center text about">O Filipu</div>
-          </div>
-        </div>
-        <div class="countdown">
-          <div class="box days countdown_color">
-            <div class="box center text countdown_title">Dana</div>
-            <div class="center text countdown_value">
-              <h1>150</h1>
+          <div class="biography">
+            <div class="box about_doli_container doli_about_photo">
+              <div class="box center text name">Dolores</div>
+              <div class="center text about ">O Dolores</div>
+            </div>
+            <div class="box about_filip_container filip_about_photo">
+              <div class="box center text name">Filip</div>
+              <div class="center text about">O Filipu</div>
             </div>
           </div>
-          <div class="box hours countdown_color">
-            <div class="box center text countdown_title">Sati</div>
-            <div class="center text countdown_value">
-              <h1>3</h1>
+          <div class="countdown">
+            <div class="box days countdown_color">
+              <div class="box center text countdown_title">Dana</div>
+              <div class="center text countdown_value">
+                <h1>150</h1>
+              </div>
             </div>
-          </div>
-          <div class="box minutes countdown_color">
-            <div class="box center text countdown_title">Minuta</div>
-            <div class="center text countdown_value">
-              <h1>34</h1>
+            <div class="box hours countdown_color">
+              <div class="box center text countdown_title">Sati</div>
+              <div class="center text countdown_value">
+                <h1>3</h1>
+              </div>
+            </div>
+            <div class="box minutes countdown_color">
+              <div class="box center text countdown_title">Minuta</div>
+              <div class="center text countdown_value">
+                <h1>34</h1>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      // <div class="wrapper">
-      //   <div class="box text header">
-      //     <h1>Dragi Mani i Janja,</h1>
-      //     <h1>ovim putem vas pozivamo na naše vjenčanje.</h1>
-      //     <h1>
-      //       Sve informacije o nama i našem vječanju možete pronaći u retcima
-      //       ispod.
-      //     </h1>
-      //     <h1>Veselimo se vašem dolasku,</h1>
-      //     <h1>Vaši Dolores i Filip</h1>
-      //   </div>
-      //   <div class="box about_doli_container">
-      //     <div class="box center text name">Dolores</div>
-      //     <div class="center text description about">O Dolores</div>
-      //   </div>
-      //   <div class="box about_filip_container">
-      //     <div class="box center text name">Filip</div>
-      //     <div class="center text description about">O Filipu</div>
-      //   </div>
-      // </div>
+      </Router>
     );
   }
+}
+
+function Title() {
+  let { hash } = useParams();
+  return (
+    <div>
+      <h1>{guests[hash]["title"]},</h1>
+      <h1>
+        ovim putem pozivamo {guests[hash]["single_person"] ? "te" : "vas"} na
+        naše vjenčanje.
+      </h1>
+      <h1>
+        Sve informacije o nama i našem vječanju{" "}
+        {guests[hash]["single_person"] ? "možeš" : "možete"} pronaći u retcima
+        ispod.
+      </h1>
+      <h1>
+        Veselimo se {guests[hash]["single_person"] ? "tvojem" : "vašem"}{" "}
+        dolasku,
+      </h1>
+      <h1>Vaši Dolores i Filip</h1>
+    </div>
+  );
 }
 
 export default App;

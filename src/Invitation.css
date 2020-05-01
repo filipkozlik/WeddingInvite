@@ -165,13 +165,11 @@ body {
 
 .text {
   padding: 20px;
-  font-size: 150%;
+  font-size: large;
   color: #000;
 }
 
 .box {
-  background-color: #444;
-  color: #fff;
   border-radius: 10px;
 }
 
